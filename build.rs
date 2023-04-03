@@ -156,6 +156,7 @@ fn configure_spdk() -> Result<LibraryConfig, Error> {
         "spdk_event_sock",
         "spdk_event_vmd",
         "spdk_nvmf",
+        "spdk_trace",
     ])?;
 
     spdk_lib.find_lib("spdk_syslibs")?;
@@ -294,6 +295,7 @@ fn main() {
         .allowlist_function("^nvme_qpair_.*")
         .allowlist_function("^nvme_ctrlr_.*")
         .allowlist_function("^nvme_transport_qpair_.*")
+        .allowlist_function("^spdk_trace.*")
         .blocklist_type("^longfunc")
         .allowlist_type("^spdk_nvme_ns_flags")
         .allowlist_type("^spdk_nvme_registered_ctrlr.*")
